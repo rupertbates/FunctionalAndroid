@@ -35,6 +35,10 @@ public class MainActivity extends Activity {
         Option<List<String>> option = functional.getSavedPages();
         option.map(data -> showSavedPages(data));
 
+
+
+
+
         //Either as return type
         Either<String, List<String>> either = functional.getDataOrErrorMessage();
 
@@ -48,11 +52,10 @@ public class MainActivity extends Activity {
                 data -> setAdapter(data)
         );
 
-        /**
-         * Imperative way of doing it
-         */
 
     }
+
+
 
     private Unit setAdapter(List<String> list) {
         return unit();
