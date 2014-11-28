@@ -11,6 +11,7 @@ public class ImperativeExample extends BaseExample {
             setArticleImage(article.getMainImage());
         }
 
+        //Checking for null through an object graph quickly becomes unwieldy
         if (article.getContributor() != null &&
                 article.getContributor().getImage() != null &&
                 article.getContributor().getImage().getSize() != null) {

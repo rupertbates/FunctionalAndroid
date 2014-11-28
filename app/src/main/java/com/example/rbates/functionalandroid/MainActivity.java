@@ -1,10 +1,12 @@
 package com.example.rbates.functionalandroid;
 
 import android.app.Activity;
+import android.drm.DrmStore;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import fj.Unit;
@@ -25,6 +27,16 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //on click handlers
+        findViewById(R.id.myView).setOnClickListener(v -> handleClick());
+
+        findViewById(R.id.myView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleClick();
+            }
+        });
 
         /**
          * Functional way of doing things:
@@ -55,6 +67,9 @@ public class MainActivity extends Activity {
 
     }
 
+    private void handleClick() {
+
+    }
 
 
     private Unit setAdapter(List<String> list) {
